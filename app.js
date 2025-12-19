@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let redirects = null;
 
-    fetch(`${window.location.origin}/redirects.json`)
+    fetch('redirects.json')
         .then(response => response.json())
         .then(data => {
             if (!Array.isArray(data) || !data.every(item => 
