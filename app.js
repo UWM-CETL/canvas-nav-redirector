@@ -1,9 +1,9 @@
-const urlParams = new URLSearchParams(window.location.search);
-const target = urlParams.get('target').replace(/[^a-zA-Z0-9-_]/g, '');
-
-let redirects = null;
-
 document.addEventListener('DOMContentLoaded', function() {
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const target = urlParams.get('target').replace(/[^a-zA-Z0-9-_]/g, '');
+
+    let redirects = null;
 
     fetch(`${window.location.origin}/redirects.json`)
         .then(response => response.json())
