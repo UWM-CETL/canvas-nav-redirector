@@ -2,10 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const urlParams = new URLSearchParams(window.location.search);
     const target = urlParams.get('target').replace(/[^a-zA-Z0-9-_]/g, '');
-
     let redirects = null;
 
-    fetch('redirects.json')
+    fetch('/canvas-nav-redirector/redirects.json')
         .then(response => response.json())
         .then(data => {
             if (!Array.isArray(data) || !data.every(item => 
